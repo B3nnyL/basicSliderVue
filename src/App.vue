@@ -2,7 +2,7 @@
   <div id="app">
     <div>
       <transition name="component-fade" mode="out-in">
-        <component v-bind:is="view[currentCount % view.length]"></component>
+        <component v-bind:is="view[currentCount % view.length]" v-on: mouseover="stopRotation" v-on: mouseout="startRotation"></component>
       </transition>
     </div>
   </div>
