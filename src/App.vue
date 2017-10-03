@@ -5,9 +5,20 @@
         <button class="btn" @click="previous()">Previous</button>
         <button class="btn" @click="next()">Next</button>
       </div>
-      <transition name="component-fade" mode="out-in">
+      <!-- <transition name="component-fade" mode="out-in">
         <component v-bind:is="view[currentCount % view.length]" v-on: mouseover="stopRotation" v-on: mouseout="startRotation"></component>
-      </transition>
+      </transition> -->
+       <transition name="component-fade" mode="out-in">
+          <component v-bind:is="view[currentCount % view.length]" v-on: mouseover="stopRotation" v-on: mouseout="startRotation"></component>
+       </transition>
+       <transition name="component-fade" mode="out-in">
+          <component v-bind:is="view[(currentCount + 1) % view.length]" v-on: mouseover="stopRotation" v-on: mouseout="startRotation"></component>
+       </transition>
+       <transition name="component-fade" mode="out-in">
+          <component v-bind:is="view[(currentCount + 2) % view.length]" v-on: mouseover="stopRotation" v-on: mouseout="startRotation"></component>
+       </transition>
+      
+       
     </div>
   </div>
 </template>
@@ -23,13 +34,13 @@ export default {
   },
   components: {
     'v-a': {
-      template: '<img src="https://cdn-images.farfetch-contents.com/12/13/10/56/12131056_10557407_1000.jpg" alt="image1">'
+      template: '<img src="https://cdn-images.farfetch-contents.com/12/13/10/56/12131056_10557407_1000.jpg" alt="image1" width="256">'
     },
     'v-b': {
-      template: '<img src="https://cdn-images.farfetch-contents.com/12/13/10/56/12131056_10557409_1000.jpg" alt="image2">'
+      template: '<img src="https://cdn-images.farfetch-contents.com/12/13/10/56/12131056_10557409_1000.jpg" alt="image2" width="256">'
     },
     'v-c': {
-      template: '<img src="https://cdn-images.farfetch-contents.com/12/13/10/56/12131056_10557410_1000.jpg" alt="image3">'
+      template: '<img src="https://cdn-images.farfetch-contents.com/12/13/10/56/12131056_10557410_1000.jpg" alt="image3" width="256">'
     }
   },
   mounted: function () {
