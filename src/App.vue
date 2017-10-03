@@ -1,6 +1,10 @@
 <template>
   <div id="app">
     <div>
+      <div>
+        <button class="btn" @click="previous()">Previous</button>
+        <button class="btn" @click="next()">Next</button>
+      </div>
       <transition name="component-fade" mode="out-in">
         <component v-bind:is="view[currentCount % view.length]" v-on: mouseover="stopRotation" v-on: mouseout="startRotation"></component>
       </transition>
@@ -41,6 +45,9 @@ export default {
     },
     next: function () {
       this.currentCount += 1
+    },
+    previous: function () {
+      this.currentCount -= 1
     }
   }
 }
