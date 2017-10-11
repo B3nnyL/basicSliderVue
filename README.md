@@ -23,7 +23,7 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 ## Tasks
 - [ ] Componented
 - [ ] Style
-- [ ] Add Indictors
+- [-] Add Indictors
 - [ ] Add Controls
 - [ ] More Animations
-- [ ] Add Thumbnails
+- [-] Add Thumbnails
